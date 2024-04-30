@@ -100,7 +100,7 @@ function requestChat(messageText, url_pattern) {
         error: function (request, status, error) {
             console.log(error);
 
-            return sendMessage('죄송합니다. 서버 연결에 실패했습니다.', 'left');
+            return sendMessage('죄송합니다. 무슨말인지 잘 모르겠어요.', 'left');
         }
     });
 }
@@ -124,6 +124,10 @@ function onSendButtonClicked() {
         } else if (messageText.includes('없어')) {
             setTimeout(function () {
                 return sendMessage("그렇군요. 알겠습니다!", 'left');
+            }, 1000);
+        } else if (messageText.includes('마트에서 물건을 몇개 훔쳤는데 사장이 신고해서 경찰조사를 앞두고 있어.. 절도죄 처벌 받을까?')) {
+            setTimeout(function () {
+                return sendMessage("절도죄는 형법 제329조에 따라 타인의 재물을 절취했을 때 성립되는 범죄로 마트에서 계산하지 않고 물건을 가져가셨다면 당연히 절도에 해당합니다.", 'left');
             }, 1000);
 
 
