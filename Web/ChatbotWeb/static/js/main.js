@@ -42,7 +42,7 @@ function sendMessage(text, message_side) {
 
 function greet() {
     setTimeout(function () {
-        return sendMessage("Lawyer-Chatbot에 오신걸 환영합니다.", 'left');
+        return sendMessage("Rowyer-Chatbot에 오신걸 환영합니다.", 'left');
     }, 1000);
 
     setTimeout(function () {
@@ -63,10 +63,10 @@ function setUserName(username) {
             return sendMessage("반갑습니다." + username + "님. 닉네임이 설정되었습니다.", 'left');
         }, 1000);
         setTimeout(function () {
-            return sendMessage("저는 법률 상담을 해드리는 변호사봇입니다.", 'left');
+            return sendMessage("저는 각종 법률 정보를 알려주는 변호사봇 입니다..", 'left');
         }, 2000);
         setTimeout(function () {
-            return sendMessage("궁금한게 있다면 무엇이든 물어보세요!", 'left');
+            return sendMessage("궁금한 게 있다면 무엇이든 물어보세요!", 'left');
         }, 3000);
 
         return username;
@@ -100,7 +100,7 @@ function requestChat(messageText, url_pattern) {
         error: function (request, status, error) {
             console.log(error);
 
-            return sendMessage('죄송합니다. 무슨말인지 잘 모르겠어요.', 'left');
+            return sendMessage('죄송합니다. 모델 연결에 실패했습니다.', 'left');
         }
     });
 }
@@ -115,7 +115,7 @@ function onSendButtonClicked() {
     } else {
         if (messageText.includes('안녕')) {
             setTimeout(function () {
-                return sendMessage("안녕하세요. 저는 Lawyer Chatbot입니다.", 'left');
+                return sendMessage("안녕하세요. 저는 변호사 챗봇입니다.", 'left');
             }, 1000);
         } else if (messageText.includes('고마워')) {
             setTimeout(function () {
@@ -125,9 +125,9 @@ function onSendButtonClicked() {
             setTimeout(function () {
                 return sendMessage("그렇군요. 알겠습니다!", 'left');
             }, 1000);
-        } else if (messageText.includes('마트에서 물건을 몇개 훔쳤는데 사장이 신고해서 경찰조사를 앞두고 있어.. 절도죄 처벌 받을까?')) {
+        } else if (messageText.includes('마트에서 물건을 몇개 훔쳤는데 사장이 신고해서 경찰조사를 앞두고 있어. 절도죄 처벌 받을까?')) {
             setTimeout(function () {
-                return sendMessage("절도죄는 형법 제329조에 따라 타인의 재물을 절취했을 때 성립되는 범죄로 마트에서 계산하지 않고 물건을 가져가셨다면 당연히 절도에 해당합니다.", 'left');
+                return sendMessage("절도죄는 형법 제329조에 따라 타인의 재물을 절취했을 때 성립되는 범죄로 마트에서 계산하지 않고 물건을 가져가셨다면 당연히 절도에 해당됩니다.", 'left');
             }, 1000);
 
 
